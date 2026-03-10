@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Utility Tools</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGO ALWAYS VISIBLE -->
+<img src="63D52577-E042-4790-9DEC-990EB3EC57B9.png" alt="Logo" id="logo" onclick="goHome()">
+
+<!-- DARK MODE TOGGLE -->
+<button id="darkModeToggle">🌙</button>
+
+<!-- MAIN PAGE -->
+<div id="main-page">
+    <header>
+        <h1>PROJECT TOOLS </h1>
+        <p>Have a look. There are lots of things that might be useful to you. *_* </p>
+    </header>
+
+    <div class="container">
+        <div class="card" onclick="openTool('calculator')">
+            <h2>Calculator</h2>
+        </div>
+        <div class="card" onclick="openTool('clock')">
+            <h2>Clock</h2>
+        </div>
+        <div class="card" onclick="openTool('stopwatch')">
+            <h2>Stopwatch</h2>
+        </div>
+        <div class="card" onclick="openTool('notes')">
+            <h2>Notes</h2>
+        </div>
+        <div class="card" onclick="openTool('dice')">
+            <h2>Dice Roller</h2>
+        </div>
+    </div>
+
+    <!-- Suggestion Box -->
+    <div id="suggestion-box">
+        <h3>Suggestion Box</h3>
+        <textarea id="suggestion-text" placeholder="Your feedback..."></textarea>
+        <button onclick="saveSuggestion()">Submit</button>
+        <p id="thank-you-message"></p>
+    </div>
+</div>
+
+<!-- TOOL PAGES -->
+
+<!-- CALCULATOR PAGE -->
+<div id="calculator-page" class="tool-page">
+    <h2>Calculator</h2>
+    <input type="text" id="calc-display" disabled>
+    <div class="calc-buttons">
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('+')">+</button>
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('-')">-</button>
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('*')">*</button>
+        <button onclick="press('0')">0</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="clearCalc()">C</button>
+        <button onclick="press('/')">/</button>
+    </div>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<!-- CLOCK PAGE -->
+<div id="clock-page" class="tool-page">
+    <h2>Analog Clock</h2>
+    <canvas id="clock-canvas" width="350" height="350"></canvas>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<!-- STOPWATCH PAGE -->
+<div id="stopwatch-page" class="tool-page">
+    <h2>Stopwatch</h2>
+    <h1 id="stopwatch-display">0:00:000</h1>
+    <div class="stopwatch-buttons">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="stopStopwatch()">Stop</button>
+        <button onclick="resetStopwatch()">Reset</button>
+    </div>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<!-- NOTES PAGE -->
+<div id="notes-page" class="tool-page">
+    <h2>Notes</h2>
+    <textarea id="notes-text" placeholder="Write your notes here..."></textarea>
+    <button onclick="saveNotes()">Save Note</button>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<!-- DICE PAGE -->
+<div id="dice-page" class="tool-page">
+    <h2>Dice Roller</h2>
+    <p id="dice-rule">Player 1: Roll the dice!</p>
+    <div class="dice-container">
+        <div class="dice" id="dice1"></div>
+        <div class="dice" id="dice2"></div>
+    </div>
+    <button id="dice-roll-btn" onclick="rollDice()">Roll Dice</button>
+    <button id="dice-restart-btn" onclick="restartDice()" style="display:none;">Restart Game</button>
+    <h2 id="dice-result"></h2>
+    <button class="back-btn" onclick="goHome()">← Back</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
